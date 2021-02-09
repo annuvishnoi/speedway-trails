@@ -29,6 +29,6 @@ jobs:
       uses: peter-evans/repository-dispatch@v1
       with:
         token: ${{ secrets.REPO_ACCESS_TOKEN }}
-        repository: github.repository
-        event-type: my-event
+        repository: ${{ github.repository }}
+        event-type: docker-build
         client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
