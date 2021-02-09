@@ -8,11 +8,11 @@ name: Docker Build
  # push:
   #  branches: [ master ]
   #pull_request:
-   # branches: [ master ]
+  #  branches: [ master ]
 
-    on:
-      repository_dispatch:
-        types: [ my-event ]
+on:
+  repository_dispatch:
+    types: [ my-event ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
