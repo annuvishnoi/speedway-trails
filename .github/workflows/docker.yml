@@ -25,4 +25,4 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run docker build and build the image
-        run: docker build . --filename DockerFile --tag speedwaytrails:test
+        run: docker build . --file Dockerfile --tag speedwaytrails:test
