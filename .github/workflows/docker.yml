@@ -24,5 +24,6 @@ jobs:
     steps:
 
       # Runs a single command using the runners shell
+      - uses: actions/checkout@v2
       - name: Run docker build and build the image
         run: docker build . --file Dockerfile --tag speedwaytrails:test
