@@ -1,22 +1,22 @@
 version: "3"
 services:
-  mysqldb:
-    image: mysql
+  postgresdb:
+    image: postgres
     volumes:
-      - mysql_volume:/var/lib/mysql
+      - postgres_volume:/var/lib/postgres
     environment:
-      MYSQL_ROOT_PASSWORD: trailspwd
-      MYSQL_DATABASE: speedway_trails_db
-  trivia-api:
+      POSTGRES_PASSWORD: trailspwd
+      POSTGRES_DB: speedway_trails_db
+  speedway-trails:
     build: .
     environment:
-      DB_HOST: mysqldb
-      DB_USER: root
+      DB_HOST: postgresdb
+      DB_USER: postgres
       DB_PASSWORD: trailspwd
       DB_NAME: speedway_trails_db
     depends_on:
-      - mysqldb
+      - postgresdb
     ports:
       - "8200:8080"
 volumes:
-  mysql_volume: {}
+  postgres_volume: {}
