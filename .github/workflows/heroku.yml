@@ -1,9 +1,8 @@
 name: Deploy to Heroku
 
 on:
-  workflow_dispatch:
-  release:
-    types: [published]
+  repository_dispatch:
+    types: [ heroku-deployment ]
 
 jobs:
   build:
